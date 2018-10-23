@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>Thinking In Java</title>
+      <link href="/2018/10/23/thinkinginjava/"/>
+      <url>/2018/10/23/thinkinginjava/</url>
+      
+        <content type="html"><![CDATA[<h2 id="第一章-nbsp-nbsp-nbsp-nbsp-nbsp"><a href="#第一章-nbsp-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>第一章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><h2 id="第二章-nbsp-nbsp-nbsp-nbsp-nbsp"><a href="#第二章-nbsp-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>第二章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><h2 id="第三章-nbsp-nbsp-nbsp-nbsp-nbsp"><a href="#第三章-nbsp-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>第三章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><h2 id="第四章-nbsp-nbsp-nbsp-nbsp-nbsp"><a href="#第四章-nbsp-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>第四章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><h2 id="第五章-nbsp-nbsp-nbsp-nbsp-nbsp"><a href="#第五章-nbsp-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>第五章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><h2 id="第六章-nbsp-nbsp-nbsp-nbsp-nbsp"><a href="#第六章-nbsp-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="第六章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>第六章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><h2 id="第七章-nbsp-nbsp-nbsp-nbsp-nbsp"><a href="#第七章-nbsp-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="第七章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>第七章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><h2 id="第八章-nbsp-nbsp-nbsp-nbsp-nbsp"><a href="#第八章-nbsp-nbsp-nbsp-nbsp-nbsp" class="headerlink" title="第八章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></a>第八章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><h2 id="第九章-nbsp-nbsp-nbsp-nbsp-nbsp-接口"><a href="#第九章-nbsp-nbsp-nbsp-nbsp-nbsp-接口" class="headerlink" title="第九章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接口"></a>第九章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接口</h2><table><thead><tr><th style="text-align:left">abstract</th><th style="text-align:left">interface</th></tr></thead><tbody><tr><td style="text-align:left">extend</td><td style="text-align:left">implement</td></tr><tr><td style="text-align:left">有abstract方法，一定是抽象类；反之，抽象类可以没有抽象方法</td><td style="text-align:left">域都是final、static修饰的，所以域必须被初始化</td></tr><tr><td style="text-align:left"></td><td style="text-align:left">访问修饰符都是public的</td></tr><tr><td style="text-align:left">抽象方法要被实现，所以不能是静态的，也不能是私有的</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">单根继承</td><td style="text-align:left">多实现</td></tr></tbody></table><ol><li>在设计层面，抽象类的概念要远大于接口</li><li><a href="/images/users/interface-abstract.png">接口与抽象</a></li><li>适配器模式  </li><li>工厂模式</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> read-notes </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>设计模式</title>
+      <link href="/2018/01/25/design-patterns/"/>
+      <url>/2018/01/25/design-patterns/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>这篇是为了总结日常开发中遇到的各种设计风格，旨在让自己的代码更加规范。</p><p>##</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> design-patterns </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+  
+  
+</search>
