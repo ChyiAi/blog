@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="macOS,">
 
 
 
@@ -83,17 +83,22 @@
 
 
 
-<meta name="description" content="apple macOS文件系统介绍目录      | 官方描述    | 简述|:——- | :——— | :—-|\/Applications | This directory is where you install apps intended for use by all users of a computer. The App Store installs apps purchased b">
+  
+  <link href="/blog/lib/kityminder/kityminder.core.css?v=1.0.0" rel="stylesheet" type="text/css">
+
+
+<meta name="description" content="摘录自官方文档    目录 官方描述 简述     /Applications This directory is where you install apps intended for use by all users of a computer. The App Store installs apps purchased by the user in this directory automa">
+<meta name="keywords" content="macOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="macOS file-system">
-<meta property="og:url" content="http://yoursite.com/2018/12/18/macOS/index.html">
+<meta property="og:title" content="macOS系统目录">
+<meta property="og:url" content="https://clongc1988.gitee.io/blog/2018/12/18/macOS/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="apple macOS文件系统介绍目录      | 官方描述    | 简述|:——- | :——— | :—-|\/Applications | This directory is where you install apps intended for use by all users of a computer. The App Store installs apps purchased b">
+<meta property="og:description" content="摘录自官方文档    目录 官方描述 简述     /Applications This directory is where you install apps intended for use by all users of a computer. The App Store installs apps purchased by the user in this directory automa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-18T03:30:15.337Z">
+<meta property="og:updated_time" content="2018-12-20T06:42:34.690Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="macOS file-system">
-<meta name="twitter:description" content="apple macOS文件系统介绍目录      | 官方描述    | 简述|:——- | :——— | :—-|\/Applications | This directory is where you install apps intended for use by all users of a computer. The App Store installs apps purchased b">
+<meta name="twitter:title" content="macOS系统目录">
+<meta name="twitter:description" content="摘录自官方文档    目录 官方描述 简述     /Applications This directory is where you install apps intended for use by all users of a computer. The App Store installs apps purchased by the user in this directory automa">
 
 
 
@@ -123,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/18/macOS/">
+  <link rel="canonical" href="https://clongc1988.gitee.io/blog/2018/12/18/macOS/">
 
 
 
 
 
-  <title>macOS file-system | Hexo</title>
+  <title>macOS系统目录 | Hexo</title>
   
 
 
@@ -204,12 +209,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/blog/categories/" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            分类
+            标签
           </a>
         </li>
       
@@ -288,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2018/12/18/macOS/">
+    <link itemprop="mainEntityOfPage" href="https://clongc1988.gitee.io/blog/blog/2018/12/18/macOS/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="clongc">
@@ -305,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">macOS file-system</h1>
+          <h1 class="post-title" itemprop="name headline">macOS系统目录</h1>
         
 
         <div class="post-meta">
@@ -333,34 +338,12 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-18T11:30:15+08:00">
-                2018-12-18
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-20T14:42:34+08:00">
+                2018-12-20
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/macOS/" itemprop="url" rel="index">
-                    <span itemprop="name">macOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -389,7 +372,45 @@
       
 
       
-        <p><a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#/" target="_blank" rel="noopener">apple macOS文件系统介绍</a><br>目录      | 官方描述    | 简述|<br>:——- | :——— | :—-|<br>\/Applications | This directory is where you install apps intended for use by all users of a computer. The App Store installs apps purchased by the user in this directory automatically.   |app存储目录<br>Library | There are multiple Library directories on the system, each one associated with a different domain or specific user. Apps should use the Library directory to store app-specific (or system-specific) resources. |资源目录，很多目录的子目录下都有关联的library<br>\/Network | This directory contains the list of computers in the local area network.  |网络相关<br>\/System   | This directory contains the system resources required by macOS to run. These resources are provided by Apple and must not be modified.This directory comprises the contents of the system domain.  |macOS运行所需资源目录<br>\/Users  | This directory contains one or more user home directories. The user home directory is where user-related files are stored. A typical user’s home directory includes the following subdirectories:  Applications—Contains user-specific apps.  Desktop—Contains the items on the user’s desktop.  Downloads—Contains files downloaded from the Internet.  Library—Contains user-specific app files (hidden in macOS 10.7 and later).  Movies—Contains the user’s video files.  Music—Contains the user’s music files.  Pictures—Contains the user’s photos.  Public—Contains content the user wants to share.  Sites—Contains web pages used by the user’s personal site. (Web Sharing must be enabled to display these pages.)  |</p>
+        <p><a href="https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#/" target="_blank" rel="noopener">摘录自官方文档</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">目录</th>
+<th style="text-align:left">官方描述</th>
+<th style="text-align:left">简述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">/Applications</td>
+<td style="text-align:left">This directory is where you install apps intended for use by all users of a computer. The App Store installs apps purchased by the user in this directory automatically.</td>
+<td style="text-align:left">app存储目录</td>
+</tr>
+<tr>
+<td style="text-align:left">Library</td>
+<td style="text-align:left">There are multiple Library directories on the system, each one associated with a different domain or specific user. Apps should use the Library directory to store app-specific (or system-specific) resources.</td>
+<td style="text-align:left">资源目录，很多目录的子目录下都有关联的library</td>
+</tr>
+<tr>
+<td style="text-align:left">/Network</td>
+<td style="text-align:left">This directory contains the list of computers in the local area network.</td>
+<td style="text-align:left">网络相关</td>
+</tr>
+<tr>
+<td style="text-align:left">/System</td>
+<td style="text-align:left">This directory contains the system resources required by macOS to run. These resources are provided by Apple and must not be modified.This directory comprises the contents of the system domain.</td>
+<td style="text-align:left">macOS运行所需资源目录</td>
+</tr>
+<tr>
+<td style="text-align:left">/Users</td>
+<td style="text-align:left">This directory contains one or more user home directories. The user home directory is where user-related files are stored. A typical user’s home directory includes the following subdirectories:<br>Applications—Contains user-specific apps.<br>Desktop—Contains the items on the user’s desktop.<br>Downloads—Contains files downloaded from the Internet.<br>Library—Contains user-specific app files (hidden in macOS 10.7 and later).<br>Movies—Contains the user’s video files.<br>Music—Contains the user’s music files.<br>Pictures—Contains the user’s photos.<br>Public—Contains content the user wants to share.<br>Sites—Contains web pages used by the user’s personal site. (Web Sharing must be enabled to display these pages.)</td>
+<td style="text-align:left">用户目录</td>
+</tr>
+</tbody>
+</table>
+<p>unix文件介绍</p>
+<h3 id="MAC下如何显示隐藏文件"><a href="#MAC下如何显示隐藏文件" class="headerlink" title="MAC下如何显示隐藏文件"></a>MAC下如何显示隐藏文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//在终端上输入以下命令 &gt; defaults write com.apple.finder AppleShowAllFiles -bool true</span><br><span class="line">//重新启动Finder &gt; 使用快捷键 Command + Option + esc</span><br><span class="line">或者执行 killall Finder命令 这样就可以显示隐藏文件了。</span><br><span class="line">//不显示隐藏文件的命令为 &gt; defaults write com.apple.finder AppleShowAllFiles -bool false</span><br><span class="line">同样也需要东西启动Finder才生效。</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -410,7 +431,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2018/12/18/macOS/" title="macOS file-system">http://yoursite.com/2018/12/18/macOS/</a>
+    <a href="https://clongc1988.gitee.io/blog/2018/12/18/macOS/" title="macOS系统目录">https://clongc1988.gitee.io/blog/2018/12/18/macOS/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -423,6 +444,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/blog/tags/macOS/" rel="tag"># macOS</a>
+          
+        </div>
+      
 
       
       
@@ -432,7 +459,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/12/15/hexo-doc/" rel="next" title="本站 搭建教程">
+              <a href="/blog/2018/12/15/site-doc/" rel="next" title="本站 搭建教程">
                 <i class="fa fa-chevron-left"></i> 本站 搭建教程
               </a>
             
@@ -441,6 +468,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/12/20/redisbook/" rel="prev" title="The Little Redis Book">
+                The Little Redis Book <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -492,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -508,23 +548,23 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+
+            
               
               
-              <div class="site-state-item site-state-categories">
-                <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
-            
-
             
 
           </nav>
@@ -544,6 +584,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC下如何显示隐藏文件"><span class="nav-number">1.</span> <span class="nav-text">MAC下如何显示隐藏文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -637,6 +693,11 @@
 
   
   
+
+
+
+  
+  
     <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
   
 
@@ -663,6 +724,16 @@
   
   
     <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/kityminder/kity.min.js?v=1.0.0"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/kityminder/kityminder.core.min.js?v=1.0.0"></script>
   
 
 
@@ -1068,6 +1139,10 @@
   
 
   
+
+  
+  <script type="text/javascript" src="/blog/js/src/kityminder.js?v=5.1.4"></script>
+
 
 </body>
 </html>

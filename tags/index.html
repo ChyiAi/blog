@@ -83,15 +83,20 @@
 
 
 
+  
+  <link href="/blog/lib/kityminder/kityminder.core.css?v=1.0.0" rel="stylesheet" type="text/css">
+
+
 <meta name="description" content="此站将做为个人的开发经验知识总结">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/categories/design-patterns/index.html">
+<meta property="og:title" content="tags">
+<meta property="og:url" content="https://clongc1988.gitee.io/blog/tags/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="此站将做为个人的开发经验知识总结">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-20T06:39:04.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="tags">
 <meta name="twitter:description" content="此站将做为个人的开发经验知识总结">
 
 
@@ -122,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/design-patterns/">
+  <link rel="canonical" href="https://clongc1988.gitee.io/blog/tags/">
 
 
 
 
 
-  <title>分类: design-patterns | Hexo</title>
+  <title>tags | Hexo</title>
   
 
 
@@ -147,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -203,12 +208,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/blog/categories/" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            分类
+            标签
           </a>
         </li>
       
@@ -273,53 +278,43 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>design-patterns<small>分类</small>
-        </h1>
-      </div>
+	<h1 class="post-title" itemprop="name headline">tags</h1>
+
+
+
+</header>
 
       
+      
+      
+      <div class="post-body han-init-context">
         
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-            <a class="post-title-link" href="/blog/2018/12/13/git/" itemprop="url">
-              
-                <span itemprop="name">git</span>
-              
-            </a>
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+                目前共计 4 个标签
+            </div>
+            <div class="tag-cloud-tags">
+              <a href="/blog/tags/Idea/" style="font-size: 30px; color: #111">Idea</a> <a href="/blog/tags/macOS/" style="font-size: 30px; color: #111">macOS</a> <a href="/blog/tags/redis/" style="font-size: 12px; color: #ccc">redis</a> <a href="/blog/tags/读书笔记/" style="font-size: 12px; color: #ccc">读书笔记</a>
+            </div>
+          </div>
         
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-13T18:42:44+08:00" content="2018-12-13">
-          12-13
-        </time>
       </div>
-
-    </header>
-  </article>
-
-
+      
+      
       
     </div>
-
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -327,6 +322,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -363,23 +362,23 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+
+            
               
               
-              <div class="site-state-item site-state-categories">
-                <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
-            
-
             
 
           </nav>
@@ -492,6 +491,11 @@
 
   
   
+
+
+
+  
+  
     <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
   
 
@@ -520,6 +524,16 @@
     <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/blog/lib/kityminder/kity.min.js?v=1.0.0"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/kityminder/kityminder.core.min.js?v=1.0.0"></script>
+  
+
 
   
 
@@ -541,6 +555,10 @@
 
 
   
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -919,6 +937,10 @@
   
 
   
+
+  
+  <script type="text/javascript" src="/blog/js/src/kityminder.js?v=5.1.4"></script>
+
 
 </body>
 </html>
