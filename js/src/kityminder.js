@@ -25,4 +25,8 @@ $(document).ready(function(){
           minder.importData('markdown', markdownText);
           minder.disable();
           minder.execCommand('hand');
+
+          var width = $('.kitycontainer').width();
+          var p_length = $('.kitycontainer').children('p').length * 80;
+          $('.kitycontainer').height(p_length > width ? width : p_length);
 })
