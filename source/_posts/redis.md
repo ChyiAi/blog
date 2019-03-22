@@ -1,0 +1,79 @@
+---
+title: Redis
+tags: redis
+---
+## 官网安装
+mac 上安装 redis 首先必须保证mac 已经安装 xcode.
+
+因为make时要用到 Xcode 的command Tools .
+
+### [下载 redis ](https://redis.io/download)
+```
+$ wget http://download.redis.io/releases/redis-4.0.2.tar.gz
+$ tar xzf redis-4.0.2.tar.gz
+$ cd redis-4.0.2
+$ make
+```
+修改文件夹名并编译
+```
+$ mv redis-2.8.7 redis
+$ cd redis/
+$ sudo make
+$ sudo make test
+$ sudo make isntall
+```
+### 配置config  
+```
+$ vim /usr/local/redis-4.0.2/redis.conf
+```
+找到`dir  ./`这一行配置。此配置是将内存中的数据写入一个文件，这个数据库文件要保存到什么地方。
+我在mac根目录下创建了 `/Users/***/develop/config/redis `的文件夹（*注意此文件夹必须有可读写权限*）
+所以这一行的配置是 dir `/Users/***/develop/config/redis`修改后保存配置文件，同时将配置文件移动到 /etc 目录下.
+```
+sudo mv redis.conf /etc
+```
+上面第三步 `make install `成功后，你就应该在这个目录下看到redis  
+```
+/usr/local/bin/redis-server
+```
+尝试启动一下 redis  
+```
+cd /usr/local/bin
+./redis-server /etc/redis.conf
+```
+conf文件相关配置  
+
+| 功能     | 操作实现     |
+| :------------- | :------------- |
+| 设置线程守护模式(后台启动)  | daemonize=yes       |
+| 设置进程锁文件  | pidfile /usr/local/redis/redis.pid  |
+| port  |  6379 |
+| timeout   |  300 |
+|  日志级别 | loglevel debug  |
+| <span style="color:red;"> 日志位置</span> | logfile /usr/local/redis/log-redis.log  |
+|<span style="color:red;"> 指定本地数据库路径 </span>| dir /usr/local/redis/db/   |
+|  设置数据库的数量，默认数据库为0，可以使用SELECT <dbid>命令在连接上指定数据库id |  databases 8 |
+
+**注**：_标红参数要注意修改，否则注意查看报错日志，redis是否已启动_
+
+### redis-cli命令总结  
+
+| 功能     | 命令     |
+| :------------- | :------------- |
+| 远程链接       | redis-cli -h \{host\} -p {port} {command}      |
+|  关闭 | redis-cli shutdown  |
+
+## homebrew安装
+```
+➜  bin brew install redis
+==> Downloading https://homebrew.bintray.com/bottles/redis-4.0.10.high_sierra.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring redis-4.0.10.high_sierra.bottle.tar.gz
+==> Caveats
+To have launchd start redis now and restart at login:
+  brew services start redis
+Or, if you don't want/need a background service you can just run:
+  redis-server /usr/local/etc/redis.conf
+==> Summary
+🍺  /usr/local/Cellar/redis/4.0.10: 13 files, 2.8MB
+```

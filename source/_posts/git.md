@@ -118,7 +118,7 @@ git merge BRANCHNAME
 ```
 git fetch origin
 ```
-## reset HEAD origin by force.
+## reset HEAD origin by force.
 ```
 git checkout .
 git fetch --all

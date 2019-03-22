@@ -85,6 +85,13 @@ search:
   format: html
   limit: 10000
 
+
+# algolia:
+#   applicationID: 'NRXXU3EC4R'
+#   apiKey: '416588a1d862f6b706f69ec1bfcbcffe'
+#   indexName: 'indexName'
+#   chunkSize: 1000
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

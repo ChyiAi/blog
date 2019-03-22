@@ -1,0 +1,175 @@
+---
+layout: post
+title: "多线程"
+permalink: /posts/thread/
+excerpt: ""
+tag: thread
+---
+_涉及到多线程的理论始终不够清晰条理，索性总结一篇以自勉_  
+[分享一个有趣的图文博客](https://www.cnblogs.com/xinyuyuanm/archive/2013/05/19/3087596.html)  
+## 定义
+
+**Wiki:** In computer science, a thread of execution is the smallest sequence of programmed instructions that can be managed independently by a scheduler, which is typically a part of the operating system. The implementation of threads and processes differs between operating systems, but in most cases a thread is a component of a process. Multiple threads can exist within one process, executing concurrently and sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its variables at any given time.
+{: .notice--info}
+
+简述wiki的描述：  
+线程是进程的组件，同进程内线程共享资源。
+随之产生的概念：  
+并发：同一时间只有一个cpu实例访问  
+并行：同一时间可以有个cpu实例访问
+引用示例简图  
+<img src="{{ site.url }}{{ site.baseurl }}/images/thread/concurrent-parallel.png" alt="concurent-parallel">
+
+### 线程安全
+涉及到事务的概念 [transaction]({{ site.url }}{{ site.baseurl }}/posts/transaction)  
+### 线程同步
+单一时间内并发访问。e.g. synchronized关键字
+
+## 线程各状态转换
+引用api说明  
+<a href ="{{ site.url }}{{ site.baseurl }}/images/thread/enum-threadstate.jpg">
+<img src="{{ site.url }}{{ site.baseurl }}/images/thread/enum-threadstate.jpg"></a>  
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/thread/thread_states.png">  
+
+<table>
+<tr  style="text-align:center;">
+    <td style="width:10%">方法名</td>
+    <td style="width:60%">简介摘要</td>
+    <td style="width:30%">总结</td>
+</tr>
+<tr>
+    <td>start()</td>
+    <td>
+    </td>
+    <td>线程起点  //调用run();</td>
+</tr>
+<tr>
+    <td>join()</td>
+    <td><a href ="{{ site.url }}{{ site.baseurl }}/images/thread/thread-join.jpg"><img src="{{ site.url }}{{ site.baseurl}}/images/thread/thread-join.jpg" ></a></td>
+    <td>等待直到线程死亡  //使用wait();实现</td>
+</tr>
+<tr>
+    <td>sleep()</td>
+    <td><a href ="{{ site.url }}{{ site.baseurl }}/images/thread/thread-sleep.jpg"><img src="{{ site.url }}{{ site.baseurl}}/images/thread/thread-sleep.jpg" ></a></td>
+    <td>睡眠暂停线程，依赖系统调度</td>
+</tr>
+<tr>
+    <td>wait()</td>
+    <td></td>
+    <td>继承自object，等待直到其他线程invoke notify(); or notifyAll();</td>
+</tr>
+<tr>
+    <td>notify()</td>
+    <td><a href ="{{ site.url }}{{ site.baseurl }}/images/thread/object-notify.jpg"><img src="{{ site.url }}{{ site.baseurl}}/images/thread/object-notify.jpg" ></a></td>
+    <td>继承自object，唤醒一个等待该object的线程，与等待的其他线程共同竞争</td>
+</tr>
+<tr>
+    <td>notifyAll()</td>
+    <td><a href ="{{ site.url }}{{ site.baseurl }}/images/thread/object-notifyAll.jpg"><img src="{{ site.url }}{{ site.baseurl}}/images/thread/object-notifyAll.jpg" ></a></td>
+    <td>唤醒所有等待 ...</td>
+</tr>
+<tr>
+    <td>yield()</td>
+    <td><a href ="{{ site.url }}{{ site.baseurl }}/images/thread/thread-yield.jpg"><img src="{{ site.url }}{{ site.baseurl}}/images/thread/thread-yield.jpg" ></a></td>
+    <td>注释说的比较难理解。简单解释为，让行。执行该方法的线程并没有释放锁，只是让scheduler把它的优先级放后</td>
+</tr>
+</table>
+### Monitor
+看完上表，在官方注释中有一个重要的概念，monitor（监视器、监视锁）。
+引用[stackoverflow的回答](https://stackoverflow.com/questions/3362303/whats-a-monitor-in-java)：
+Java中Object本身即Monitor对象，它会关联每个对象。
+![]({{ site.url }}{{ site.baseurl }}/images/thread/monitor.jpg)  
+了解了monitor的基本定义，上面的表格中还体现出一个问题。wait();notify();notifyAll();三个方法并不属于thread类而是Object对象的方法。这里也可以体现出Object即Monitor的理论。
+#### synchronized
+<a href="{{ site.url }}{{ site.baseurl }}/images/thread/thread/synchronized.jpg">![]({{ site.url }}{{ site.baseurl }}/images/thread/synchronized.jpg)</a>
+摘自[oralce官方文档](https://docs.oracle.com/javase/specs/jls/se8/html/jls-17.html#jls-17.1)，提炼几个关键点：  
+1. 最基本的同步就是使用monitor实现（也验证了上面每个对象都关联Monitor的说法）
+2. synchronized statement 会计算对象引用，直到运行完成。
+3. synchronized method 当方法被调用就锁定，如果执行方法的是instance则锁定关联instance的monitor，如果方法是static的则锁定关联的class object的monitor，如果正在执行的方法完成了，则自动解锁。
+
+### ThreadPool
+这里主要由ThreadPoolExecutor展开分析：
+```
+/**
+     * Creates a new {@code ThreadPoolExecutor} with the given initial
+     * parameters and default thread factory and rejected execution handler.
+     * It may be more convenient to use one of the {@link Executors} factory
+     * methods instead of this general purpose constructor.
+     *
+     * @param corePoolSize the number of threads to keep in the pool, even
+     *        if they are idle, unless {@code allowCoreThreadTimeOut} is set
+     * @param maximumPoolSize the maximum number of threads to allow in the
+     *        pool
+     * @param keepAliveTime when the number of threads is greater than
+     *        the core, this is the maximum time that excess idle threads
+     *        will wait for new tasks before terminating.
+     * @param unit the time unit for the {@code keepAliveTime} argument
+     * @param workQueue the queue to use for holding tasks before they are
+     *        executed.  This queue will hold only the {@code Runnable}
+     *        tasks submitted by the {@code execute} method.
+     * @throws IllegalArgumentException if one of the following holds:<br>
+     *         {@code corePoolSize < 0}<br>
+     *         {@code keepAliveTime < 0}<br>
+     *         {@code maximumPoolSize <= 0}<br>
+     *         {@code maximumPoolSize < corePoolSize}
+     * @throws NullPointerException if {@code workQueue} is null
+     */
+    public ThreadPoolExecutor(int corePoolSize,
+                              int maximumPoolSize,
+                              long keepAliveTime,
+                              TimeUnit unit,
+                              BlockingQueue<Runnable> workQueue) {
+        this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
+             Executors.defaultThreadFactory(), defaultHandler);
+    }
+```
+ThreadPoolExecutor 构造函数源代码中有几个核心参数，corePoolSize(核心线程数)、maximumPoolSize(线程池最大允许线程数量)、keepAliveTime(当线程数量大与核心线程数时，线程等待的最大时间)
+```
+public void execute(Runnable command) {
+        if (command == null)
+            throw new NullPointerException();
+        /*
+         * Proceed in 3 steps:
+         *
+         * 1. If fewer than corePoolSize threads are running, try to
+         * start a new thread with the given command as its first
+         * task.  The call to addWorker atomically checks runState and
+         * workerCount, and so prevents false alarms that would add
+         * threads when it shouldn't, by returning false.
+         *
+         * 2. If a task can be successfully queued, then we still need
+         * to double-check whether we should have added a thread
+         * (because existing ones died since last checking) or that
+         * the pool shut down since entry into this method. So we
+         * recheck state and if necessary roll back the enqueuing if
+         * stopped, or start a new thread if there are none.
+         *
+         * 3. If we cannot queue task, then we try to add a new
+         * thread.  If it fails, we know we are shut down or saturated
+         * and so reject the task.
+         */
+        int c = ctl.get();
+        if (workerCountOf(c) < corePoolSize) {
+            if (addWorker(command, true))
+                return;
+            c = ctl.get();
+        }
+        if (isRunning(c) && workQueue.offer(command)) {
+            int recheck = ctl.get();
+            if (! isRunning(recheck) && remove(command))
+                reject(command);
+            else if (workerCountOf(recheck) == 0)
+                addWorker(null, false);
+        }
+        else if (!addWorker(command, false))
+            reject(command);
+    }
+```
+从ThreadPoolExecutor的execute方法注解我们可以分析线程池的三步执行方法：
+1. 如果线程数少于corePoolSize，那么尝试用给定的命令开启一个线程。
+2. 任务排队成功，仍然需要进行double-check，来确保是否添加线程。
+3. 如果无法给任务排队，那么将尝试创建新的线程。如果创建失败，则拒绝该任务。
+[参考博文](https://blog.csdn.net/gol_phing/article/details/49032055)
+
+[最后转一篇习题](http://www.importnew.com/12773.html)
