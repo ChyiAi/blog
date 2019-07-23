@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="本站搭建流程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-22T03:37:42.624Z">
+<meta property="og:updated_time" content="2019-03-22T03:41:18.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="本站 搭建教程">
 <meta name="twitter:description" content="本站搭建流程">
@@ -337,7 +337,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-22T11:37:42+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-22T11:41:18+08:00">
                 2019-03-22
               </time>
             
@@ -375,7 +375,7 @@
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>搭建博客的心由来已久，本篇文章为记录搭建过程。<br>博客引擎 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 模版 <a href="https://theme-next.org" target="_blank" rel="noopener">next</a>，搭建系统环境为<code>macOS MoJave 10.14.2</code>，详细文档请移步官网。</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>搭建博客的心由来已久，本篇文章为记录搭建过程。<br>博客引擎 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 模版 <a href="https://theme-next.org" target="_blank" rel="noopener">next</a>，搭建系统环境为<code>macOS MoJave 10.14.2</code>，详细文档请移步官网。</p>
 <h2 id="配置安装环境"><a href="#配置安装环境" class="headerlink" title="配置安装环境"></a>配置安装环境</h2><ul>
 <li>安装git</li>
 <li>安装Node.js</li>
@@ -406,7 +406,7 @@
 </table>
 <h3 id="Hexo创建文件命令"><a href="#Hexo创建文件命令" class="headerlink" title="Hexo创建文件命令"></a>Hexo创建文件命令</h3><p>由于init命令是创建极简博客环境，所以标签<code>tags</code>、分类<code>categories</code>、关于<code>about</code>均没有对应目录，需要用到以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
 <p>布局 <a href="https://hexo.io/docs/writing#Layout" target="_blank" rel="noopener">layout</a> 三种类型见官网<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br><span class="line">$ hexo new page categories</span><br><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure></p>
-<p>创建完以上三个文件在 <code>blog/source</code> 目录下有对应文件生成，修改文件<br><code>source/about/index.md</code>中type类型为about<br><code>source/tags/index.md</code>中type类型为tags<br><code>source/categories/index.md</code>中type类型为categories</p>
+<p>创建完以上三个文件在 <code>blog/source</code> 目录下有对应文件生成，修改文件<br><code>source/about/index.md</code>中type类型为about<br><code>source/tags/index.md</code>中type类型为tags<br><code>source/categories/index.md</code>中type类型为categories</p>
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
 <li>下载next<br><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 官网有大量的主题提供下载，这里以 <a href="https://theme-next.org" target="_blank" rel="noopener">next</a> 为例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd blog</span><br><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 </li>
@@ -421,9 +421,9 @@
 <li>配置标签<code>tags</code>、分类<code>categories</code>、关于<code>about</code>目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  #about: /about/ || user</span><br><span class="line">  #tags: /tags/ || tags</span><br><span class="line">  #categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>取消<code>tags</code>、<code>categories</code>、<code>about</code>的注释</p>
+<p>取消<code>tags</code>、<code>categories</code>、<code>about</code>的注释</p>
 <ol start="3">
-<li><p>配置语言环境<br>这里要注意配置语言环境需要在<code>blog/_config.yml</code>文件中配置，而在<code>blog/themes/next/_config.yml</code>中是不起作用的</p>
+<li><p>配置语言环境<br>这里要注意配置语言环境需要在<code>blog/_config.yml</code>文件中配置，而在<code>blog/themes/next/_config.yml</code>中是不起作用的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># language: en</span><br><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>设置博客目录<br>hexo在本地环境运行时将占用<code>4000</code>端口，地址为：<code>http://localhost:4000</code>，<br>但是实际部署情况，你可能需要自定义根目录，例如：<code>http://localhost:4000/blog</code> 那么需要修改 <code>_config.yml</code> 文件中的 <code>root: /</code> 为 <code>root: /blog</code></p>
@@ -433,13 +433,13 @@
 <li><a href="https://theme-next.org/docs/third-party-services/search-services/#Local-Search" target="_blank" rel="noopener">搜索</a></li>
 <li><a href="https://theme-next.org/docs/third-party-services/content-sharing-services/#AddThis" target="_blank" rel="noopener">分享</a></li>
 </ul>
-<h3 id="脑图插件"><a href="#脑图插件" class="headerlink" title="脑图插件"></a>脑图插件</h3><p>由于next主题本身并没有脑图插件，笔者这里使用可以转化markdown语法的<a href="https://github.com/fex-team/kityminder-core" target="_blank" rel="noopener">百度kityminder</a>插件为例配置next</p>
+<h3 id="脑图插件"><a href="#脑图插件" class="headerlink" title="脑图插件"></a>脑图插件</h3><p>由于next主题本身并没有脑图插件，笔者这里使用可以转化markdown语法的<a href="https://github.com/fex-team/kityminder-core" target="_blank" rel="noopener">百度kityminder</a>插件为例配置next</p>
 <ul>
-<li>根据 <code>kityminder</code> 的github仓库的介绍，安装 <code>bower</code>，及 <code>kity</code> 所有的依赖，找到生成的 <code>kity.min.js</code> 备用<h4 id="next-开发目录简介"><a href="#next-开发目录简介" class="headerlink" title="next 开发目录简介"></a><code>next</code> 开发目录简介</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- layout //布局文件夹</span><br><span class="line">- scripts //脚本文件夹</span><br><span class="line">- source //资源文件夹</span><br><span class="line">  - lib //第三方库</span><br></pre></td></tr></table></figure>
+<li>根据 <code>kityminder</code> 的github仓库的介绍，安装 <code>bower</code>，及 <code>kity</code> 所有的依赖，找到生成的 <code>kity.min.js</code> 备用<h4 id="next-开发目录简介"><a href="#next-开发目录简介" class="headerlink" title="next 开发目录简介"></a><code>next</code> 开发目录简介</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- layout //布局文件夹</span><br><span class="line">- scripts //脚本文件夹</span><br><span class="line">- source //资源文件夹</span><br><span class="line">  - lib //第三方库</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="加载js文件"><a href="#加载js文件" class="headerlink" title="加载js文件"></a>加载js文件</h4><ol>
-<li>在 <code>source/lib</code> 目录下，创建 <code>kityminder</code> 文件夹，copy <code>kityminder.core.min.js</code>， <code>kity.min.js</code> 至此</li>
+<li>在 <code>source/lib</code> 目录下，创建 <code>kityminder</code> 文件夹，copy <code>kityminder.core.min.js</code>， <code>kity.min.js</code> 至此</li>
 <li><p>在 <code>layout/_script/vendors.swig</code> 文件中，添加如下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.kityminder %&#125;</span><br><span class="line">  &#123;% set js_vendors.kity  = &apos;kityminder/kity.min.js?v=1.0.0&apos; %&#125;</span><br><span class="line">  &#123;% set js_vendors.kityminder  = &apos;kityminder/kityminder.core.min.js?v=1.0.0&apos; %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -454,7 +454,7 @@
 <li><p>上步中的全局变量，需要配置在 <code>_config.yml</code> 中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># minder</span><br><span class="line">kityminder: true</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>可能会遇到的问题：<em>该插件配置完成之后，实际使用当中可能会调整css文件，由于用到<code>pullquote</code>代码块，所以需要修改<code>source/css/_common/scaffolding/helpers.styl</code>中pullquote样式</em></p>
+<li><p>可能会遇到的问题：<em>该插件配置完成之后，实际使用当中可能会调整css文件，由于用到<code>pullquote</code>代码块，所以需要修改<code>source/css/_common/scaffolding/helpers.styl</code>中pullquote样式</em></p>
 </li>
 </ol>
 <h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><ol>
@@ -467,7 +467,7 @@
 <li><p>在 <code>source/js/src</code>下，添加第三步中的 <code>kityminder.js</code> 文件，用来初始化kityminder组件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;</span><br><span class="line">          var minder = new kityminder.Minder(&#123;</span><br><span class="line">              renderTo: &apos;.kitycontainer&apos;</span><br><span class="line">          &#125;);</span><br><span class="line">          var markdownText = $(&apos;.kitycontainer&apos;).text().trim();</span><br><span class="line">          $(&apos;.kitycontainer p&apos;).each(function(index, element) &#123;</span><br><span class="line">              element.style.display = &apos;none&apos;;</span><br><span class="line">          &#125;);</span><br><span class="line">          minder.importData(&apos;markdown&apos;, markdownText);</span><br><span class="line">          minder.disable();</span><br><span class="line">          minder.execCommand(&apos;hand&apos;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>初始化完成后，可以通过<a href="https://hexo.io/docs/tag-plugins#Pull-Quote" target="_blank" rel="noopener">hexo引用pullquote代码块</a>（因为此代码块可以加载我们在js中初始化的容器 <code>kity的kitycontainer</code> class），实际效果如下</p>
+<li><p>初始化完成后，可以通过<a href="https://hexo.io/docs/tag-plugins#Pull-Quote" target="_blank" rel="noopener">hexo引用pullquote代码块</a>（因为此代码块可以加载我们在js中初始化的容器 <code>kity的kitycontainer</code> class），实际效果如下</p>
 <blockquote class="pullquote kitycontainer"><p>#example</p>
 <p>##一级分支</p>
 <p>##一级分支</p>
@@ -616,7 +616,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -629,7 +629,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
